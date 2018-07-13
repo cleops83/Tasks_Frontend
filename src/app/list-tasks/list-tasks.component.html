@@ -1,0 +1,26 @@
+<div class="col-md-6">
+  <h2> Task Dashboard</h2>
+  <button class="btn btn-danger" (click)="addTask()"> Add Task</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Progress</th>
+      <th>Type</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{task.id}}</td>
+      <td>{{task.name}}</td>
+      <td>{{task.progress}}</td>
+      <td>{{task.type}}</td>
+      <td><button class="btn btn-danger"  (click)="executeTask(task.id)"> Execute</button>
+      <td><button class="btn btn-danger"  (click)="cancelTask(task.id)"> Cancel</button>
+      <td><button class="btn btn-danger"  (click)="deleteTask(task.id)"> Delete</button>
+    </tr>
+    </tbody>
+  </table>
+</div>
